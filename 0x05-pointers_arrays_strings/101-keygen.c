@@ -2,23 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - entry point generates a random password
- * progrsm [0]-cracker 
- * Return: Always 0
+ * main - generates keygen
+ * Return: 0
  */
 int main(void)
 {
-char c;
-int x;
+	int pass, sum;
 
-srand(time(0));
-while (x <= 2645)
-{
-c = rand() % 128;
-x += c;
-putchar(c);
-}
-putchar(2772 - x);
-return (0);
-}
+	srand(time(NULL));
+	sum = 0;
+	while (sum <= 2645)
+	{
+		pass = (rand() % 128);
+		sum += pass;
+		printf("%c", pass);
+	}
+	printf("%c", 2772 - sum);
 
+	return (0);
+}
